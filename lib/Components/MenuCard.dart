@@ -16,6 +16,7 @@ class MenuCard extends StatelessWidget {
     return Container(
       width: 160,
       child: Card(
+        elevation: 2,
         child: Wrap(
           children: <Widget>[
             Image.asset(

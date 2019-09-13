@@ -8,11 +8,14 @@ import 'package:carousel_pro/carousel_pro.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  final warna = Color(0xFF643DB4);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primaryColor: Colors.deepPurple[300]),
+      // theme: ThemeData(primaryColor: Colors.deepPurple[300]),
+      theme: ThemeData(primaryColor: warna),
+      //#643DB4
       home: BestRecipesHome(),
     );
   }
@@ -91,7 +94,7 @@ class _BestRecipesHomeState extends State<BestRecipesHome> {
                     images: [
                       // NetworkImage('https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
                       Image.asset('assets/steak.png',
-                          fit: BoxFit.cover, colorBlendMode: BlendMode.darken),
+                          fit: BoxFit.cover,),
                       Image.asset(
                         'assets/french toast.jpg',
                         fit: BoxFit.cover,
@@ -225,6 +228,7 @@ class _BestRecipesHomeState extends State<BestRecipesHome> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Card(
+                    elevation: 2,
                     child: Column(
                       children: <Widget>[
                         Container(
@@ -292,53 +296,12 @@ class _BestRecipesHomeState extends State<BestRecipesHome> {
                       Stack(
                         children: <Widget>[
                           AlbumCard(),
-                          Align(
-                            alignment: Alignment.bottomLeft,
-                            child: Container(
-                              color: Colors.black38,
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Row(
-                                  children: <Widget>[
-                                    Icon(
-                                      Icons.photo_library,
-                                      color: Colors.white,
-                                    ),
-                                    Text(
-                                      "12",
-                                      style: TextStyle(color: Colors.white),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                          )
+                          
                         ],
                       ),
                       Stack(
                         children: <Widget>[
                           AlbumCard(),
-                          Align(
-                            alignment: Alignment.bottomLeft,
-                            child: Container(
-                              color: Colors.black38,
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Row(
-                                  children: <Widget>[
-                                    Icon(
-                                      Icons.photo_library,
-                                      color: Colors.white,
-                                    ),
-                                    Text(
-                                      "12",
-                                      style: TextStyle(color: Colors.white),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                          )
                         ],
                       ),
                     ],
