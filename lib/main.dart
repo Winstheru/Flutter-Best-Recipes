@@ -84,47 +84,36 @@ class _BestRecipesHomeState extends State<BestRecipesHome> {
             width: size.width,
             child: Stack(
               children: <Widget>[
-                // SizedBox(
-                //     height: 200.0,
-                //     width: 350.0,
-                //     child: Carousel(
-                //       images: [
-                //         // NetworkImage('https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
-                //         ExactAssetImage("assets/steak.png"),
-                //         ExactAssetImage("assets/french toast.jpg"),
-                //         ExactAssetImage("assets/egg sausage.jpg")
-                //       ],
-                //       dotSize: 3.0,
-                //       dotSpacing: 15.0,
-                //       dotColor: Colors.grey,
-                //       indicatorBgPadding: 5.0,
-                //       // dotBgColor: Colors.purple.withOpacity(0.5),
-                //       dotBgColor: Colors.transparent,
-                //       borderRadius: false,
-                //       autoplay: false,
-                //     )),
                 Container(
-                    height: 200.0,
-                    width: size.width,
-                    decoration: BoxDecoration(
-                        backgroundBlendMode: BlendMode.dstATop,
-                        color: Colors.black38),
-                    child: Carousel(
-                      images: [
-                        // NetworkImage('https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
-                        ExactAssetImage("assets/steak.png"),
-                        ExactAssetImage("assets/french toast.jpg"),
-                        ExactAssetImage("assets/egg sausage.jpg")
-                      ],
-                      dotSize: 3.0,
-                      dotSpacing: 15.0,
-                      dotColor: Colors.grey,
-                      indicatorBgPadding: 5.0,
-                      // dotBgColor: Colors.purple.withOpacity(0.5),
-                      dotBgColor: Colors.transparent,
-                      borderRadius: false,
-                      autoplay: false,
-                    )),
+                  height: 200.0,
+                  width: size.width,
+                  child: Carousel(
+                    images: [
+                      // NetworkImage('https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
+                      Image.asset('assets/steak.png',
+                          fit: BoxFit.cover, colorBlendMode: BlendMode.darken),
+                      Image.asset(
+                        'assets/french toast.jpg',
+                        fit: BoxFit.cover,
+                      ),
+                      Image.asset(
+                        'assets/egg sausage.jpg',
+                        fit: BoxFit.cover,
+                      ),
+                      // ExactAssetImage("assets/steak.png"),
+                      // ExactAssetImage("assets/french toast.jpg"),
+                      // ExactAssetImage("assets/egg sausage.jpg")
+                    ],
+                    dotSize: 3.0,
+                    dotSpacing: 15.0,
+                    dotColor: Colors.grey,
+                    indicatorBgPadding: 5.0,
+                    // dotBgColor: Colors.purple.withOpacity(0.5),
+                    dotBgColor: Colors.transparent,
+                    borderRadius: false,
+                    autoplay: false,
+                  ),
+                ),
 
                 // Container(
                 //   color: Colors.black38,
@@ -135,7 +124,7 @@ class _BestRecipesHomeState extends State<BestRecipesHome> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
                     SizedBox(
-                      height: 20,
+                      height: 60,
                     ),
                     Center(
                       child: Container(
@@ -162,7 +151,7 @@ class _BestRecipesHomeState extends State<BestRecipesHome> {
                       ),
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ),
@@ -183,7 +172,7 @@ class _BestRecipesHomeState extends State<BestRecipesHome> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
+                      padding: const EdgeInsets.only(left: 16.0),
                       child: Text(
                         "Easy Breakfast",
                         style: TextStyle(fontWeight: FontWeight.bold),
@@ -195,7 +184,6 @@ class _BestRecipesHomeState extends State<BestRecipesHome> {
                   ],
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 20),
                   width: size.width,
                   height: 310,
                   child: ListView(
@@ -223,7 +211,7 @@ class _BestRecipesHomeState extends State<BestRecipesHome> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
+                      padding: const EdgeInsets.only(left: 16.0),
                       child: Text(
                         "Learn How",
                         style: TextStyle(fontWeight: FontWeight.bold),
@@ -257,9 +245,9 @@ class _BestRecipesHomeState extends State<BestRecipesHome> {
                         Row(
                           children: <Widget>[
                             Padding(
-                              padding: const EdgeInsets.only(left: 8.0),
+                              padding: const EdgeInsets.only(left: 8.0, top: 8.0),
                               child: Text(
-                                "Laura's Quick Slow Chili",
+                                "Laura's Quick Slow Cooker Turkey Chili",
                                 style: TextStyle(fontSize: 16),
                               ),
                             )
@@ -285,7 +273,7 @@ class _BestRecipesHomeState extends State<BestRecipesHome> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
+                      padding: const EdgeInsets.only(left: 16.0),
                       child: Text(
                         "Best Cookbooks",
                         style: TextStyle(fontWeight: FontWeight.bold),
@@ -296,57 +284,63 @@ class _BestRecipesHomeState extends State<BestRecipesHome> {
                     )
                   ],
                 ),
-                Row(
-                  children: <Widget>[
-                    Card(
-                      child: Column(
-                        children: <Widget>[
-                          Text("Friday Drinks"),
-                          Placeholder(
-                            fallbackWidth: 150,
-                            fallbackHeight: 200,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Card(
-                      child: Column(
-                        children: <Widget>[
-                          Text("Christmast Dinner"),
-                          Placeholder(
-                            fallbackWidth: 150,
-                            fallbackHeight: 200,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
                 Container(
                   height: 200,
-                  color: Colors.green,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: <Widget>[
                       Stack(
                         children: <Widget>[
                           AlbumCard(),
-                          Align(alignment: Alignment.bottomLeft,
-                                                      child: Container(
+                          Align(
+                            alignment: Alignment.bottomLeft,
+                            child: Container(
                               color: Colors.black38,
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Row(
                                   children: <Widget>[
-                                    Icon(Icons.photo_library, color: Colors.white,),
-                                    Text("12", style: TextStyle(color: Colors.white),)
+                                    Icon(
+                                      Icons.photo_library,
+                                      color: Colors.white,
+                                    ),
+                                    Text(
+                                      "12",
+                                      style: TextStyle(color: Colors.white),
+                                    )
                                   ],
                                 ),
                               ),
                             ),
                           )
                         ],
-                      )
+                      ),
+                      Stack(
+                        children: <Widget>[
+                          AlbumCard(),
+                          Align(
+                            alignment: Alignment.bottomLeft,
+                            child: Container(
+                              color: Colors.black38,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  children: <Widget>[
+                                    Icon(
+                                      Icons.photo_library,
+                                      color: Colors.white,
+                                    ),
+                                    Text(
+                                      "12",
+                                      style: TextStyle(color: Colors.white),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                     ],
                   ),
                 )

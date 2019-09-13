@@ -4,32 +4,34 @@ class AlbumCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200,
-      child: 
-      Card(
-        child: Row(
-          children: <Widget>[
-            Flexible(
-              flex: 2,
-              child: Image.asset('assets/casserol.jpg'),
-            ),
-            Column(
+        width: 230,
+        child: Stack(children: <Widget>[
+          Card(
+            child: 
+            Row(
               children: <Widget>[
                 Flexible(
                   flex: 1,
-                  fit: FlexFit.loose,
-                  child: Image.asset('assets/egg sausage.jpg'),
+                  child: Image.asset('assets/casserol.jpg', fit: BoxFit.cover,),
                 ),
-                Flexible(
-                  flex: 1,
-                  fit: FlexFit.loose,
-                  child: Image.asset('assets/french toast.jpg'),
-                ),
+                Column(
+                  children: <Widget>[
+                    Flexible(
+                      flex: 1,
+                      child: Image.asset('assets/egg sausage.jpg'),
+                    ),
+                    SizedBox(
+                      height: 3,
+                    ),
+                    Flexible(
+                      flex: 1,
+                      child: Image.asset('assets/french toast.jpg'),
+                    ),
+                  ],
+                )
               ],
-            )
-          ],
-        )
-      ),
-    );
+            ),
+          )
+        ]));
   }
 }
