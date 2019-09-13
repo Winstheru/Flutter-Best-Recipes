@@ -1,3 +1,5 @@
+import 'package:cooking_recipes/Components/AlbumCard.dart';
+import 'package:cooking_recipes/Components/MenuCard.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:cooking_recipes/Components/components.dart';
@@ -168,13 +170,15 @@ class _BestRecipesHomeState extends State<BestRecipesHome> {
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Column(
               children: <Widget>[
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: <Widget>[
-                      TypeChip(label: "VEGETARIAN"),
-                      TypeChip(label: "SALADS"),
-                      TypeChip(label: "MICROWAVE"),
-                    ]),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(children: <Widget>[
+                    TypeChip(label: "VEGETARIAN"),
+                    TypeChip(label: "SALADS"),
+                    TypeChip(label: "MICROWAVE"),
+                    TypeChip(label: "OTHERS"),
+                  ]),
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -190,136 +194,27 @@ class _BestRecipesHomeState extends State<BestRecipesHome> {
                     )
                   ],
                 ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 20),
+                  width: size.width,
+                  height: 310,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
                     children: <Widget>[
-                      Card(
-                        child: Column(
-                          children: <Widget>[
-                            Container(
-                              width: 150,
-                              height: 200,
-                              child: Image.asset(
-                                "assets/french toast.jpg",
-                                fit: BoxFit.fitWidth,
-                              ),
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Container(
-                                  margin: const EdgeInsets.symmetric(
-                                      horizontal: 8.0),
-                                  child: Text(
-                                    "French Toast Casserole",
-                                  ),
-                                ),
-                                Row(
-                                  children: <Widget>[
-                                    Icon(
-                                      Icons.timer,
-                                      color: Colors.grey,
-                                    ),
-                                    Text(
-                                      " 20 min",
-                                      style: TextStyle(color: Colors.grey),
-                                    )
-                                  ],
-                                )
-                              ],
-                            )
-                          ],
-                        ),
+                      MenuCard(
+                        image: "assets/french toast.jpg",
+                        title: "French Toast Casserole",
+                        time: "20 min",
                       ),
-                      Container(
-                        width: 150,
-                        child: Card(
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                child: Image.asset(
-                                  "assets/egg sausage.jpg",
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Container(
-                                    // color: Colors.green,
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 8),
-                                    child: Text(
-                                      "Egg and Sausage Casserole",
-                                    ),
-                                  ),
-                                  Row(
-                                    children: <Widget>[
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 4.0),
-                                        child: Icon(
-                                          Icons.timer,
-                                          color: Colors.grey,
-                                        ),
-                                      ),
-                                      Text(
-                                        " 45 min",
-                                        style: TextStyle(color: Colors.grey),
-                                      )
-                                    ],
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
+                      MenuCard(
+                        image: "assets/egg sausage.jpg",
+                        title: "Egg and Sausage Casserole",
+                        time: "45 min",
                       ),
-                      Container(
-                        width: 150,
-                        height: 280,
-                        child: Card(
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                child: Image.asset(
-                                  "assets/casserol.jpg",
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Container(
-                                    // color: Colors.green,
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 8),
-                                    child: Text(
-                                      "Strawberry and Oatra Casserole",
-                                    ),
-                                  ),
-                                  Row(
-                                    children: <Widget>[
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 4.0),
-                                        child: Icon(
-                                          Icons.timer,
-                                          color: Colors.grey,
-                                        ),
-                                      ),
-                                      Text(
-                                        " 20 min",
-                                        style: TextStyle(color: Colors.grey),
-                                      )
-                                    ],
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
+                      MenuCard(
+                        image: "assets/casserol.jpg",
+                        title: "Strawberry and Oatra Casserole",
+                        time: "20 min",
                       ),
                     ],
                   ),
@@ -427,6 +322,34 @@ class _BestRecipesHomeState extends State<BestRecipesHome> {
                     ),
                   ],
                 ),
+                Container(
+                  height: 200,
+                  color: Colors.green,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: <Widget>[
+                      Stack(
+                        children: <Widget>[
+                          AlbumCard(),
+                          Align(alignment: Alignment.bottomLeft,
+                                                      child: Container(
+                              color: Colors.black38,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  children: <Widget>[
+                                    Icon(Icons.photo_library, color: Colors.white,),
+                                    Text("12", style: TextStyle(color: Colors.white),)
+                                  ],
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                )
               ],
             ),
           ),
