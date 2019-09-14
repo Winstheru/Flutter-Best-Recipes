@@ -48,8 +48,8 @@ class _BestRecipesHomeState extends State<BestRecipesHome> {
             UserAccountsDrawerHeader(
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: ExactAssetImage("assets/steak.png"),
-                      fit: BoxFit.cover)),
+                      image: ExactAssetImage("assets/flutter-logo.png",),
+                      fit: BoxFit.contain)),
               accountName: Text(
                 "Winston",
                 style: TextStyle(color: Colors.black),
@@ -63,11 +63,11 @@ class _BestRecipesHomeState extends State<BestRecipesHome> {
                     Theme.of(context).platform == TargetPlatform.iOS
                         ? Colors.blue
                         : Colors.white,
-                child: Image.asset("assets/eraser.png"),
+                child: Image.asset("assets/profile-user.png", fit: BoxFit.cover,),
               ),
             ),
             ListTile(
-              title: Text("My Location"),
+              title: Text("My Location",),
               leading: Icon(FontAwesomeIcons.mapMarkerAlt),
               onTap: () {},
             ),
@@ -88,20 +88,36 @@ class _BestRecipesHomeState extends State<BestRecipesHome> {
             child: Stack(
               children: <Widget>[
                 Container(
+                  height: 200,
+                  width: size.width,
+                  color: Colors.black87,
+                ),
+                Container(
                   height: 200.0,
                   width: size.width,
                   child: Carousel(
                     images: [
                       // NetworkImage('https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
-                      Image.asset('assets/steak.png',
-                          fit: BoxFit.cover,),
-                      Image.asset(
-                        'assets/french toast.jpg',
-                        fit: BoxFit.cover,
+                      Opacity(
+                        opacity: 0.4,
+                        child: Image.asset(
+                          'assets/steak.png',
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                      Image.asset(
-                        'assets/egg sausage.jpg',
-                        fit: BoxFit.cover,
+                      Opacity(
+                        opacity: 0.4,
+                        child: Image.asset(
+                          'assets/french toast.jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      Opacity(
+                        opacity: 0.4,
+                        child: Image.asset(
+                          'assets/egg sausage.jpg',
+                          fit: BoxFit.cover,
+                        ),
                       ),
                       // ExactAssetImage("assets/steak.png"),
                       // ExactAssetImage("assets/french toast.jpg"),
@@ -249,7 +265,8 @@ class _BestRecipesHomeState extends State<BestRecipesHome> {
                         Row(
                           children: <Widget>[
                             Padding(
-                              padding: const EdgeInsets.only(left: 8.0, top: 8.0),
+                              padding:
+                                  const EdgeInsets.only(left: 8.0, top: 8.0),
                               child: Text(
                                 "Laura's Quick Slow Cooker Turkey Chili",
                                 style: TextStyle(fontSize: 16),
@@ -296,7 +313,6 @@ class _BestRecipesHomeState extends State<BestRecipesHome> {
                       Stack(
                         children: <Widget>[
                           AlbumCard(),
-                          
                         ],
                       ),
                       Stack(
