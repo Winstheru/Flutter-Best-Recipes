@@ -48,7 +48,9 @@ class _BestRecipesHomeState extends State<BestRecipesHome> {
             UserAccountsDrawerHeader(
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: ExactAssetImage("assets/flutter-logo.png",),
+                      image: ExactAssetImage(
+                        "assets/flutter-logo.png",
+                      ),
                       fit: BoxFit.contain)),
               accountName: Text(
                 "Winston",
@@ -63,11 +65,16 @@ class _BestRecipesHomeState extends State<BestRecipesHome> {
                     Theme.of(context).platform == TargetPlatform.iOS
                         ? Colors.blue
                         : Colors.white,
-                child: Image.asset("assets/profile-user.png", fit: BoxFit.cover,),
+                child: Image.asset(
+                  "assets/profile-user.png",
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             ListTile(
-              title: Text("My Location",),
+              title: Text(
+                "My Location",
+              ),
               leading: Icon(FontAwesomeIcons.mapMarkerAlt),
               onTap: () {},
             ),
@@ -243,50 +250,49 @@ class _BestRecipesHomeState extends State<BestRecipesHome> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Card(
-                    elevation: 2,
-                    child: Column(
-                      children: <Widget>[
-                        Container(
-                          height: 200,
-                          decoration: BoxDecoration(
-                            color: Color(0xff7c94b6),
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              colorFilter: ColorFilter.mode(
-                                  Colors.black.withOpacity(0.5),
-                                  BlendMode.dstATop),
-                              image: AssetImage(
-                                'assets/steak.png',
+                  child: Container(
+                    width: size.width,
+                    child: Card(
+                      elevation: 2,
+                      child: Column(
+                        children: <Widget>[
+                          Stack(
+                            children: <Widget>[
+                              Container(height: 200, width: size.width, color: Colors.black87,),
+                              Center(child: Container(height: 180, width: 120, child: Icon(Icons.play_circle_filled, color: Colors.white54,))),
+                              Container(
+                                height: 200,
+                                width: size.width,
+                                child: Opacity(opacity: 0.4, child: Image.asset('assets/steak.png', fit: BoxFit.cover,)),
                               ),
-                            ),
+                            ],
                           ),
-                        ),
-                        Row(
-                          children: <Widget>[
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 8.0, top: 8.0),
-                              child: Text(
-                                "Laura's Quick Slow Cooker Turkey Chili",
-                                style: TextStyle(fontSize: 16),
+                          Row(
+                            children: <Widget>[
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 8.0, top: 8.0),
+                                child: Text(
+                                  "Laura's Quick Slow Cooker Turkey Chili",
+                                  style: TextStyle(fontSize: 16),
+                                ),
+                              )
+                            ],
+                          ),
+                          Row(
+                            children: <Widget>[
+                              Icon(
+                                Icons.arrow_right,
+                                color: Colors.grey,
                               ),
-                            )
-                          ],
-                        ),
-                        Row(
-                          children: <Widget>[
-                            Icon(
-                              Icons.arrow_right,
-                              color: Colors.grey,
-                            ),
-                            Text(
-                              "18:23",
-                              style: TextStyle(color: Colors.grey),
-                            )
-                          ],
-                        )
-                      ],
+                              Text(
+                                "18:23",
+                                style: TextStyle(color: Colors.grey),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
